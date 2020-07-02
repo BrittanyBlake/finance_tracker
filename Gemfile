@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
-
+gem 'iex-ruby-client'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
