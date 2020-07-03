@@ -2,13 +2,13 @@
 
 <div class='search-area'>
   <h3>Search Stocks</h3>
-  <%= form_tag '#', remote: true, method: :get do %>
+  <%= form_tag search_stock_path, remote: true, method: :get do %>
     <div class="form-group row">
       <div class="col-sm-9 no-right-padding">
         <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-lg" %>
       </div>
       <div class="col-sm-3 no-left-padding">
-        <%= button_tag type: :submit, class: "btn btn-success" do %>
+        <%= button_tag type: :submit, class: "btn btn-success pb-3 pt-2" do %>
           <%= "Search"%>
         <% end %>
       </div>
