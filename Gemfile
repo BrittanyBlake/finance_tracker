@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'iex-ruby-client'
-gem "font-awesome-rails"
+gem 'font_awesome5_rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
