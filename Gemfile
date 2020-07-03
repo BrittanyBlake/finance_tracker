@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'iex-ruby-client'
+gem "font-awesome-rails"
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -71,4 +72,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Gemfile
 gem 'webpacker', '~> 5.x'
 
-gem "font-awesome-rails"

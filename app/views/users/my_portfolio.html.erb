@@ -1,17 +1,17 @@
 <h1>My Portfolio</h1>
 
-<div class="search-area">
-    <h3> Search Stocks: </h3>
-    <%= form_tag '#', method: :get do%>
-        <div class="form-group row">
-            <div class="col-sm-9">
-                <%= text_field_tag :stock, params[:stock], placeholder:"stock ticker symbol", autofocus: true, class:"form-control form-control-lg"%>
-            </div>
-            <div class="col-sm-3 no-left-padding">
-                <%= button_tag type: :submit, class: "btn btn-success"%>
-                    <%= fa_icon 'seach 2x'%>    
-                <% end %>
-            </div>
-        </div>
-    <% end %>
+<div class='search-area'>
+  <h3>Search Stocks</h3>
+  <%= form_tag '#', remote: true, method: :get do %>
+    <div class="form-group row">
+      <div class="col-sm-9 no-right-padding">
+        <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-lg" %>
+      </div>
+      <div class="col-sm-3 no-left-padding">
+        <%= button_tag type: :submit, class: "btn btn-success" do %>
+          <%= "Search"%>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
