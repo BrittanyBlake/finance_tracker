@@ -1,6 +1,7 @@
 class StocksController < ApplicationController
     protect_from_forgery except: :search
     def search
+<<<<<<< HEAD
      if params[:stock].present? 
        @stock = Stock.new_lookup(params[:stock])
        if @stock
@@ -17,4 +18,9 @@ class StocksController < ApplicationController
        redirect_to my_portfolio_path
      end
    end
+=======
+        @stock = Stock.new_lookup(params[:stock])
+        render 'users/my_portfolio'
+    end
+>>>>>>> parent of a14211e... handle invald search results
 end
