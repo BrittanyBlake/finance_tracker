@@ -8,7 +8,7 @@ module.exports = function(api) {
   if (!validEnv.includes(currentEnv)) {
     throw new Error(
       'Please specify a valid `NODE_ENV` or ' +
-        '`BABEL_ENV` environment variables. Valid values are "development", ' +
+        '`_ENV` environment variables. Valid values are "development", ' +
         '"test", and "production". Instead, received: ' +
         JSON.stringify(currentEnv) +
         '.'
@@ -18,7 +18,7 @@ module.exports = function(api) {
   return {
     presets: [
       isTestEnv && [
-        '@babel/preset-env',
+        '@/preset-env',
         {
           targets: {
             node: 'current'
@@ -26,7 +26,7 @@ module.exports = function(api) {
         }
       ],
       (isProductionEnv || isDevelopmentEnv) && [
-        '@babel/preset-env',
+        '@/preset-env',
         {
           forceAllTransforms: true,
           useBuiltIns: 'entry',
@@ -37,24 +37,24 @@ module.exports = function(api) {
       ]
     ].filter(Boolean),
     plugins: [
-      'babel-plugin-macros',
-      '@babel/plugin-syntax-dynamic-import',
-      isTestEnv && 'babel-plugin-dynamic-import-node',
-      '@babel/plugin-transform-destructuring',
+      '-plugin-macros',
+      '@/plugin-syntax-dynamic-import',
+      isTestEnv && '-plugin-dynamic-import-node',
+      '@/plugin-transform-destructuring',
       [
-        '@babel/plugin-proposal-class-properties',
+        '@/plugin-proposal-class-properties',
         {
           loose: true
         }
       ],
       [
-        '@babel/plugin-proposal-object-rest-spread',
+        '@/plugin-proposal-object-rest-spread',
         {
           useBuiltIns: true
         }
       ],
       [
-        '@babel/plugin-transform-runtime',
+        '@/plugin-transform-runtime',
         {
           helpers: false,
           regenerator: true,
@@ -62,7 +62,7 @@ module.exports = function(api) {
         }
       ],
       [
-        '@babel/plugin-transform-regenerator',
+        '@/plugin-transform-regenerator',
         {
           async: false
         }
